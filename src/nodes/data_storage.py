@@ -17,7 +17,7 @@ def update(client,params):
 	'''	This function saves a stores the pipeline dataframe in a database.'''
 	df = pd.read_csv(params.temp_data, encoding='cp1252')
 
-	df.to_sql(params.database_name, client.conn, index=False, if_exists='append')
+	df.to_sql(params.table_name, client.conn, index=False, if_exists='append')
 
 	#Since i am the only one with access to the database, we can use a makeshift log csv to check if the DB was modified today.
 	pd.DataFrame({'a':'this is only a log - check date on name'}, index=[0]).to_csv(params.db_data)
