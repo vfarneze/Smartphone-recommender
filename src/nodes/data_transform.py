@@ -7,7 +7,7 @@ import datetime
 def done(client,params):
     '''Returns true there is data was treated today'''
     if (os.path.isfile(params.trans_data) and os.path.isfile(params.temp_data)):
-        print('>>>> Already runned data_transform today! (2/3)')
+        print('>>>> Already runned data_transform today... (2/3)')
         return True
 
     else:
@@ -42,13 +42,7 @@ def update(client,params):
     df.to_csv(params.trans_data,sep=',',index=False, na_rep='NaN', encoding='cp1252')
 
     #minor modification for editing the timestamp that will be used to save the database
-    t = datetime.datetime.now()
-    year = f'{t.year}'
-    month = (lambda x: '0' + x if len(x) == 1 else x)(f'{t.month}')
-    day = (lambda x: '0' + x if len(x) == 1 else x)(f'{t.day}')
-    time = year + '-' + month + '-' + day
-
-    df['timestamp'] = time
+    df['timestamp'] = params.timestamp
     df.to_csv(params.temp_data,sep=',',index=False, na_rep='NaN', encoding='cp1252')
 
     print('>>>> Dataframe treated successfully! (2/3)')

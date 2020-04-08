@@ -22,8 +22,10 @@ def process(client, params):
 
 
 if __name__ == '__main__':
+	print('---'*20)
 	params = Params()
 	client = Client(params)
 	process(client,params)
-	print('---'*10)
-	print('everything went better than expected!')
+	client.conn.close()
+	print('>>>> Everything went better than expected!')
+	print('---'*20)

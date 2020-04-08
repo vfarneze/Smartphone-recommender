@@ -9,7 +9,6 @@ class Params:
 	raw_data = '../data_storage/raw/jctraw' + datetime.now().strftime("%Y-%m-%d") + '.csv'
 	trans_data = '../data_storage/transformed/jcttreated' + datetime.now().strftime("%Y-%m-%d") + '.csv'
 	temp_data = '../data_storage/temp/toDB' + datetime.now().strftime("%Y-%m-%d") + '.csv'
-	db_data = '../data_storage/dblogs/dblog' + datetime.now().strftime("%Y-%m-%d") + '.csv'
 
 	## Database connection params
 	user = 'postgres'
@@ -29,3 +28,12 @@ class Params:
 
 	#parameters for data_storage
 	prefix=r'jct_data_'
+
+	#time params
+	t = datetime.now()
+	year = f'{t.year}' 
+	month = (lambda x: '0' + x if len(x) == 1 else x)(f'{t.month}')
+	day = (lambda x: '0' + x if len(x) == 1 else x)(f'{t.day}')
+	
+	# YYYY-MM-DD
+	timestamp = year + '-' + month + '-' + day
