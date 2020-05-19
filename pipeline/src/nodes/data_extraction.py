@@ -8,7 +8,13 @@ import pandas as pd
 import os
 
 def get_redirection_link(link):
-    return BeautifulSoup(requests.get(link).content,"lxml").find_all('a')[0]['href']
+
+    try:
+        answer = BeautifulSoup(requests.get(link).content,"lxml").find_all('a')[0]['href']
+    except:
+        answer = ''
+
+    return answer
 
 
 def done(client,params):

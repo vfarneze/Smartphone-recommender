@@ -26,7 +26,7 @@ def update(client,params):
     # treating links:
     # 'https://www.jacotei.com.br' to jacotei links, by checking if starts with '/' (its the only one)
 
-    df.loc[:,'piece_link'] = df.loc[:,'piece_link'].apply(lambda x: 'https://www.jacotei.com.br' + x if x.startswith('/') else x)
+    df.loc[:,'piece_link'] = df.loc[:,'piece_link'].apply(lambda x: 'https://www.jacotei.com.br' + x if str(x).startswith('/') else x)
 
     # treating 'img', which will be the future 'destino_do_link' column
     # > drop '//img.i' from //img.ijacotei
