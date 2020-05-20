@@ -1,5 +1,12 @@
 Contar a história das ideias iniciais e como elas mudaram...
 
+- sera que em algum momento o requests ficará com cookies, e então
+os valores mostrados no requests.get() serão adulterados da realidade?
+
+- solução, será, seria usar um vpn diferente, diariamente?
+
+#anotar aqui todos os problemas com as métricas
+
 
 Example:
 Problem: this happended...
