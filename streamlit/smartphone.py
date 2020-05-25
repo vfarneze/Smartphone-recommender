@@ -19,7 +19,7 @@ def get_soup_from_url(url):
 
 st.header('What should be my next smartphone?')
 
-st.write("""Dear user, welcome to the COQUI 0.1.0 interface.""")
+st.write("""Dear user, welcome to the COQUI 0.1.0 interface!""")
 st.write("""Its use is simple: you tell us how much you want to pay for your next smartphone and we simply recommend you one with the best cost-benefit!""")
 
 st.sidebar.header('User interface')
